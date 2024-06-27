@@ -47,7 +47,17 @@ html {
   background-repeat: no-repeat;
   height: 120vh;
   flex: 1 1 45rem;
+  z-index: -1;
+  transition: background-position 1s linear;
+  -webkit-transition: background-position 1s linear;
+  -moz-transition: background-position 1s linear;
+  -ms-transition: background-position 1s linear;
+  -o-transition: background-position 1s linear;
   max-height: 120vh;
+}
+/* agar image mempunyai efek bergerak ketika digulir */
+.image.parallax {
+  background-position: center calc(50% + 50px); /* Atur posisi latar belakang saat efek parallax */
 }
 .container-content {
   margin-top: 10rem;
@@ -127,7 +137,8 @@ html {
   margin-bottom: 2rem;
 }
 .bio-content .first-content p,
-.container-pendidikan p, .container-hoby p {
+.container-pendidikan p,
+.container-hoby p {
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -137,13 +148,13 @@ html {
   justify-content: space-between;
   margin-bottom: 5rem;
 }
-.container-pendidikan{
+.container-pendidikan {
   max-width: 32vw;
   max-height: 30vh;
   line-height: 1.5rem;
   width: 100%;
 }
-.pendidikan .container-hoby h3{
+.pendidikan .container-hoby h3 {
   font-size: 2rem;
   color: rgb(216, 216, 77);
   margin-bottom: 1.5rem;
@@ -341,29 +352,31 @@ footer {
     padding: 3rem;
     height: 50%;
   }
-  .bio-content{
+  .bio-content {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
   }
-  .pendidikan{
+  .pendidikan {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
   }
-  .bio-content #close-button{
-   display: none;
+  .bio-content #close-button {
+    display: none;
   }
-  .bio-content .skils-content h3{
+  .bio-content .skils-content h3 {
     margin-top: 1rem;
   }
   .first-content {
     position: absolute;
     left: 10%;
+    max-width: 40%;
+    width: 30%;
   }
-  .container-hoby{
+  .container-hoby {
     position: absolute;
     left: 10%;
   }
@@ -377,8 +390,15 @@ footer {
     color: rgb(246, 246, 74);
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   html {
-    font-size: 55%;
+    font-size: 50%;
+  }
+  .bio-content .first-content,
+  .bio-content .skils-content,
+  .pendidikan .container-hoby,
+  .pendidikan .container-pendidikan {
+    font-size: 0.9rem;
+    margin: 0;
   }
 }
