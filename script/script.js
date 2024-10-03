@@ -70,6 +70,7 @@ send.addEventListener('click', function(e) {
         });
     }
 });
+
 let lastScrollTop = 0;
 
 window.addEventListener('scroll', function() {

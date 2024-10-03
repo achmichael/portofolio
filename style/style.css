@@ -11,11 +11,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .main {
   width: 50vw;
   flex: 1 1 45rem;
@@ -59,6 +61,7 @@ html {
 .image.parallax {
   background-position: center calc(50% + 50px); /* Atur posisi latar belakang saat efek parallax */
 }
+
 .container-content {
   margin-top: 10rem;
   max-width: 50vw;
@@ -407,6 +410,27 @@ footer {
   text-decoration: none;
   color: rgb(246, 246, 74);
 }
+
+.text-progress {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 1vmin;
+  padding-left: 1rem;
+}
+
+.text-progress p {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.text-progress span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: black;
+}
+
 
 @media (max-width: 1366px) {
   html {
