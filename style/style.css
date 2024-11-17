@@ -4,6 +4,222 @@
   box-sizing: border-box;
   outline: none;
 }
+
+.tech-section {
+  background: linear-gradient(135deg, #f6f8fd 0%, #f1f4f9 100%);
+  padding: 6rem 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container-tech {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-tech h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #2d3748;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container-tech h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #4f46e5;
+  border-radius: 2px;
+}
+
+.tech-logos-container {
+  position: relative;
+  padding: 20px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-logos {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tech-logos-track {
+  display: flex;
+  animation: scroll 35s linear infinite;
+  width: fit-content;
+}
+
+.tech-logos-track::before,
+.tech-logos-track::after {
+  content: attr(data-content);
+  display: flex;
+}
+
+.tech-logos-track::before {
+  content: attr(data-content);
+  display: flex;
+}
+
+.tech-logos-track::after {
+  content: '';
+  display: flex;
+  width: fit-content;
+}
+
+.tech-logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Add fade effect on sides */
+.tech-logos-container::before,
+.tech-logos-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.tech-logos-container::before {
+  left: 0;
+  background: linear-gradient(to right, #f6f8fd 0%, transparent 100%);
+}
+
+.tech-logos-container::after {
+  right: 0;
+  background: linear-gradient(to left, #f6f8fd 0%, transparent 100%);
+}
+
+.tech-logos-track {
+  display: flex;
+  animation: scroll 35s linear infinite;
+  width: fit-content;
+}
+
+.tech-logos-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-logo {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-logo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+}
+
+.tech-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.tech-logo:hover::before {
+  left: 100%;
+}
+
+.tech-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-section {
+    padding: 4rem 0;
+  }
+  
+  .tech-logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-tech h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .tech-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 12px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-section {
+    padding: 3rem 0;
+  }
+  
+  .container-tech h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    padding: 10px;
+  }
+}
+
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -376,6 +592,7 @@ html {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+
 footer {
   padding: 3rem 2rem;
   box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.3),
@@ -459,15 +676,31 @@ footer {
   .image {
     width: 100%;
   }
-  .contact .row .img {
-    display: none;
-  }
   .container-contact {
     margin-top: 7em;
+    width: 100%;
+    padding: 2rem;
   }
   .contact .row {
+    flex-direction: column;
     margin: 0;
   }
+  .contact .row .img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .contact .row form {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+
   footer {
     margin: 0;
   }
