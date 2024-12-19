@@ -41,6 +41,10 @@
   height: 4px;
   background: #4f46e5;
   border-radius: 2px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .tech-logos-container {
@@ -62,6 +66,7 @@
   display: flex;
   animation: scroll 35s linear infinite;
   width: fit-content;
+  -webkit-animation: scroll 35s linear infinite;
 }
 
 .tech-logos-track::before,
