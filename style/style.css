@@ -29,6 +29,10 @@
   display: inline-block;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .container-tech h2::after {
@@ -242,8 +246,8 @@ html {
 .main {
   width: 50vw;
   flex: 1 1 45rem;
-  height: 120vh;
-  max-height: 120vh;
+  height: 100vh;
+  max-height: 100vh;
   background-color: #175052;
   padding: 3rem 3rem;
   color: rgb(216, 216, 77);
@@ -262,13 +266,13 @@ html {
   color: rgb(216, 216, 77);
 }
 .image {
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/new_bg.jpg");
   width: 50vw;
-  background-position: fixed;
+  background-position: center;
   background-size: cover;
   z-index: -1;
   background-repeat: no-repeat;
-  height: 120vh;
+  height: 100vh;
   flex: 1 1 45rem;
   z-index: -1;
   transition: background-position 1s linear;
@@ -279,9 +283,9 @@ html {
   max-height: 120vh;
 }
 /* agar image mempunyai efek bergerak ketika digulir */
-.image.parallax {
-  background-position: center calc(50% + 50px); /* Atur posisi latar belakang saat efek parallax */
-}
+/* .image.parallax {
+  background-position: center calc(50% + 100px); /* Atur posisi latar belakang saat efek parallax */
+/* } */
 
 .container-content {
   margin-top: 10rem;
